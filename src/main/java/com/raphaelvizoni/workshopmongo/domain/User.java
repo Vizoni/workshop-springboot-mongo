@@ -1,10 +1,17 @@
 package com.raphaelvizoni.workshopmongo.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+// nesse caso n precisa colocar o nome da collection
+// pq ele vai usar o nome da classe em minusculo
+@Document(collection = "user")
 public class User implements Serializable {
 
+    @Id
     private String id;
     private String name;
     private String email;
